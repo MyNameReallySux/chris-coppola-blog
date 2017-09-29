@@ -28,10 +28,11 @@ example:
 ```
 
 ## Low Priority (Long Term)
-TODO(Chris): Create 'smart' versions of each data component.
-TODO(Chris): Add Tests for components
-TODO(Chris): Add Tests for redux store
-TODO(Chris): Organize project into a better structure
+TODO(Chris): Create 'smart' versions of each data component  
+TODO(Chris): Add Tests for components  
+TODO(Chris): Add Tests for redux store  
+TODO(Chris): Organize project into a better structure  
+
 current structure:
 ```
 src
@@ -70,11 +71,6 @@ src
             route1.jsx
             route2.jsx
             ...
-
-            
-        
-        
-
 ```
 
 ## Potential Modules
