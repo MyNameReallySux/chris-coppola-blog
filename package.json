@@ -4,7 +4,11 @@
   "description": "My personal blog site. Front end React app.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config webpack.config.js",
+    "start": "node server/proxy",
+    "prepare": "scripts/prepare",
+    "test": "mocha --compilers js:babel-register --require ./test/test-header.js --recursive",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,66 @@
   "bugs": {
     "url": "https://github.com/MyNameReallySux/chris-coppola-blog/issues"
   },
-  "homepage": "https://github.com/MyNameReallySux/chris-coppola-blog#readme"
+  "homepage": "https://github.com/MyNameReallySux/chris-coppola-blog#readme",
+  "babel": {
+    "comments": false,
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ],
+    "plugins": [
+      [
+        "transform-regenerator",
+        {
+          "asyncGenerators": true,
+          "generators": true,
+          "async": true
+        }
+      ],
+      "transform-async-to-generator",
+      "react-hot-loader/babel"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-regenerator": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.1.1",
+    "chai-immutable": "^1.6.0",
+    "circular-dependency-plugin": "^4.2.1",
+    "html-webpack-plugin": "^2.30.1",
+    "mocha": "^3.5.0",
+    "proxy-middleware": "^0.15.0",
+    "remote-redux-devtools": "^0.5.12",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "dependencies": {
+    "@beautiful-code/string-utils": "git+https://github.com/MyNameReallySux/string-utils.git",
+    "@beautiful-code/type-utils": "git+https://github.com/MyNameReallySux/type-utils.git",
+    "axios": "^0.16.2",
+    "babel-polyfill": "^6.23.0",
+    "immutable": "^3.8.1",
+    "js-yaml": "^3.10.0",
+    "prop-types": "^15.5.10",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-promise": "^0.5.3",
+    "redux-promises": "^1.0.0",
+    "redux-saga": "^0.15.6",
+    "redux-thunk": "^2.2.0",
+    "spdy": "^3.4.7",
+    "urlcode-json": "0.0.5"
+  }
 }

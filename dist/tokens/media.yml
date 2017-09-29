@@ -1,0 +1,25 @@
+media:
+  xs:
+    name: "extra-small"
+    min: none
+    max: 479
+  ms:
+    name: "medium-small"
+    min: 480
+    max: 539
+  s:
+    name: "small"
+    min: 540
+    max: 767
+  m:
+    name: "medium"
+    min: 768
+    max: 991
+  l:
+    name: "large"
+    min: 992
+    max: 1139
+  xl:
+    name: "extra-large"
+    min: 1140
+    max: none
